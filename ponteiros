@@ -1,0 +1,21 @@
+1- package main
+
+import "fmt"
+
+func main() {
+	var n int
+	x := 4
+
+	somaNaturais(&n, x)
+
+	fmt.Println("A soma é igual a: ", n)
+}
+
+func somaNaturais(n *int, x int) {
+	soma := 0
+	for i := 1; i <= x; i++ {
+		soma += i
+	}
+	*n = soma
+}
+
