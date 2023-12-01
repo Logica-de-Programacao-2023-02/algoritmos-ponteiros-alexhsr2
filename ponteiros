@@ -43,4 +43,28 @@ func oddOrEven(x *int) {
 	}
 }
 
-3-
+3-package main
+
+import "fmt"
+
+func atualizar(nome *string) {
+	s := []rune(*nome)
+	n := len(s)
+
+	for i, j := 0, n-1; i < j; i, j = i+1, j-1 {
+		s[i], s[j] = s[j], s[i]
+	}
+	*nome = string(s)
+}
+
+func main() {
+	var nome string
+	fmt.Println("Escreva seu nome: ")
+	fmt.Scan(&nome)
+
+	atualizar(&nome)
+	fmt.Println("Nome Reverso: ", nome)
+
+}
+
+4-
