@@ -19,3 +19,28 @@ func somaNaturais(n *int, x int) {
 	*n = soma
 }
 
+2-package main
+
+import "fmt"
+
+func main() {
+	var n int
+	var x *int
+
+	fmt.Println("O programa irá transformar os pares em 0 e ímpares em 1")
+	fmt.Print("Digite um número: ")
+	fmt.Scan(&n)
+	x = &n
+	oddOrEven(x)
+	fmt.Print("Novo valor do número: ", n)
+}
+
+func oddOrEven(x *int) {
+	if *x%2 == 0 {
+		*x = 0
+	} else {
+		*x = 1
+	}
+}
+
+3-
