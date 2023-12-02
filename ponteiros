@@ -166,4 +166,45 @@ func novosaldo(n *Conta) {
 	fmt.Scan(&n.Saldo)
 }
 
-8-
+8-package main
+
+import "fmt"
+func New(m *int) {
+	*m = 130
+}
+
+func main() {
+	var n = 25
+	var ptr = &x
+	fmt.Println(n)
+	New(m)
+	fmt.Println(*m)
+}
+
+9-package main
+
+import "fmt"
+
+type L struct {
+	Titulo string
+	Autor  string
+	Preco  float64
+}
+
+func Desconto(livro *book) {
+	desconto := 0.10
+	livro.Preco = livro.Preco - (livro.Preco * desconto)
+}
+
+func main() {
+	mybook := book{
+		Titulo: "os miseraveis",
+		Autor:  "Victor Hugo",
+		Preco:  136.0,
+	}
+
+	Desconto(&mybook)
+
+	fmt.Printf("O novo preço do livro é: ", mybook)
+
+10-
