@@ -139,4 +139,31 @@ func main() {
 	fmt.Printf("O novo título do livro é: ", mybook)
 }
 
-7-
+7-package main
+
+import "fmt"
+
+type Conta struct {
+	Titular string
+	Saldo   float64
+}
+
+func main() {
+	account := Conta{
+		Titular: "Alex",
+	}
+
+	fmt.Println(account)
+
+	n := &account
+	novosaldo(n)
+
+	fmt.Print(account)
+}
+
+func novosaldo(n *Conta) {
+	fmt.Print("Informe o saldo da conta")
+	fmt.Scan(&n.Saldo)
+}
+
+8-
