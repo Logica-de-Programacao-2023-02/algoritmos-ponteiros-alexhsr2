@@ -207,4 +207,41 @@ func main() {
 
 	fmt.Printf("O novo preço do livro é: ", mybook)
 
-10-
+10-package main
+
+import "fmt"
+
+func main() {
+	sliceInt := []int{1, 2, 3, 4, 5, 4, 5, 5, 5, 5, 5, 6, 7, 8, 7, 8, 8}
+	x := &sliceInt
+
+	fmt.Println(sliceInt)
+fillSliceWithPrimes(x)
+	fmt.Println(sliceInt)
+}
+
+func fillSliceWithPrimes(x *[]int) {
+	var isPrime bool
+	var slicePrimes []int
+	sliceInt := *x
+	n := 2
+
+	for len(slicePrimes) < len(sliceInt) {
+		isPrime = true
+
+		for i := 2; i < n; i++ {
+			if n%i == 0 {
+				isPrime = false
+				break
+			}
+		}
+
+		if isPrime {
+			slicePrimes = append(slicePrimes, n)
+		}
+
+		n++
+	}
+
+	*x = slicePrimes
+}
