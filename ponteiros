@@ -67,4 +67,76 @@ func main() {
 
 }
 
-4-
+4-package main
+
+import (
+	"fmt"
+	"strconv"
+)
+
+func main() {
+	y := 1234
+	updateDigits(&y)
+	fmt.Println(y)
+}
+
+func updateDigits(y *int) {
+	yStr := strconv.Itoa(*y)
+
+	last := yStr[len(yStr)-1]
+	secondLast := yStr[len(yStr)-2]
+
+	lastI, _ := strconv.Atoi(string(last))
+	secondLastI, _ := strconv.Atoi(string(secondLast))
+
+	*y = lastI + secondLastI
+}
+
+5-package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func main() {
+	var n float64
+	var x *float64
+func calculo(x *float64) {
+	*x = (*x + math.Pi) / 2
+}
+fmt.Print("Digite um número: ")
+	fmt.Scan(&n)
+	x = &n
+
+	calculo(x)
+	fmt.Print("A média entre os valores é: ", n)
+}
+
+6-package main
+
+import "fmt"
+
+type Livro struct {
+	Titulo string
+	Autor  string
+}
+
+func modificarTitulo(book *Livro) {
+	if book.Autor == "Anônimo" {
+		book.Titulo = "Desconhecido"
+	}
+}
+
+func main() {
+	mybook := Livro{
+		Titulo: "os miseraveis",
+		Autor:  "Anônimo",
+	}
+
+	modificarTitulo(&mybook)
+
+	fmt.Printf("O novo título do livro é: ", mybook)
+}
+
+7-
